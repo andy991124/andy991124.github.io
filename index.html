@@ -3,116 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Access</title>
-    <!-- 自動跳轉指令 -->
-    <meta http-equiv="refresh" content="0;url=https://1drv.ms/f/c/7d4d05b0fa567c0e/IgC6xYILXyvvTaKxTGsi-kv1AXWQ0MXW8P5bewZeEy9Bwvs?e=hGxbfT">
-    
+    <title>Cloud Drive System</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #000000; /* 純黑 */
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
-            -webkit-font-smoothing: antialiased;
-            color: #ffffff;
+        body { 
+            margin: 0; 
+            background: #000; 
+            color: #fff; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif; 
+            -webkit-font-smoothing: antialiased; 
             overflow: hidden;
         }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-            /* 蘋果式絲滑淡入 */
-            animation: appleEntrance 1.5s cubic-bezier(0.15, 0.8, 0.2, 1);
+        .container { 
+            text-align: center; 
+            width: 90%; 
+            max-width: 420px; 
+            animation: appleEntrance 1.2s cubic-bezier(0.15, 0.8, 0.2, 1); 
         }
-
-        /* 蘋果風格極細加載環 */
-        .spinner {
-            width: 36px;
-            height: 36px;
-            border: 1.5px solid rgba(255, 255, 255, 0.1);
-            border-top: 1.5px solid #ffffff;
-            border-radius: 50%;
-            margin: 0 auto 35px;
-            animation: spin 0.8s linear infinite;
+        .spinner { 
+            width: 32px; height: 32px; 
+            border: 1.5px solid rgba(255,255,255,0.1); 
+            border-top: 1.5px solid #fff; 
+            border-radius: 50%; 
+            margin: 0 auto 30px; 
+            animation: spin 0.8s linear infinite; 
         }
-
-        /* 正在開啟雲端硬碟 (現在作為主要標題) */
-        h1 {
-            font-size: 28px;
-            font-weight: 500;
-            color: #f5f5f7;
-            margin-bottom: 12px;
-            letter-spacing: -0.015em;
+        h1 { 
+            font-size: 26px; 
+            font-weight: 600; 
+            margin-bottom: 8px; 
+            letter-spacing: -0.02em; 
+            color: #ffffff;
         }
-
-        /* 系統正在為您建立安全連接 */
-        .status-msg {
-            font-size: 17px;
-            font-weight: 400;
-            color: #86868b; /* 蘋果專用灰 */
+        p { 
+            font-size: 16px; 
+            color: #86868b; 
+            margin-bottom: 45px; 
             letter-spacing: -0.01em;
-            margin-bottom: 50px;
         }
-
-        /* 進入按鈕 */
-        .btn {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 12px 30px;
-            border-radius: 980px;
-            font-size: 15px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            opacity: 0.8;
+        .btn { 
+            display: block; 
+            background: #1c1c1e; 
+            color: #fff; 
+            padding: 22px; 
+            margin-bottom: 16px; 
+            border-radius: 18px; 
+            text-decoration: none; 
+            font-size: 18px; 
+            font-weight: 500; 
+            transition: all 0.3s ease; 
+            border: 1px solid #3a3a3c; 
         }
-
-        .btn:hover {
-            opacity: 1;
-            transform: scale(1.02);
+        .btn:hover { 
+            background: #ffffff; 
+            color: #000000; 
+            transform: scale(1.02); 
+            border-color: #ffffff;
         }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .btn span { 
+            display: block; 
+            font-size: 12px; 
+            opacity: 0.6; 
+            margin-top: 5px; 
+            font-weight: 400; 
         }
-
-        @keyframes appleEntrance {
-            0% { opacity: 0; transform: scale(0.98); }
-            100% { opacity: 1; transform: scale(1); }
+        @keyframes spin { 
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
         }
-
-        /* 針對行動裝置微調 */
-        @media (max-width: 768px) {
-            h1 { font-size: 24px; }
-            .status-msg { font-size: 15px; }
+        @keyframes appleEntrance { 
+            0% { opacity: 0; transform: translateY(20px); } 
+            100% { opacity: 1; transform: translateY(0); } 
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- 加載環 -->
         <div class="spinner"></div>
-        
-        <!-- 主要文字 -->
         <h1>正在開啟雲端硬碟</h1>
+        <p>請稍候，系統正在為您建立安全連接</p>
         
-        <!-- 狀態說明 -->
-        <p class="status-msg">請稍候，系統正在為您建立安全連接</p>
-        
-        <!-- 進入按鈕 -->
-        <a href="https://1drv.ms/f/c/7d4d05b0fa567c0e/IgC6xYILXyvvTaKxTGsi-kv1AXWQ0MXW8P5bewZeEy9Bwvs?e=hGxbfT" class="btn">立即進入</a>
-    </div>
+        <!-- 按鈕 A：Dropbox 下載連結 -->
+        <a href="https://www.dropbox.com/scl/fo/pbt0tvts5gkpt6hm7jo2e/ADaydNfMQymJSZYqgAyPtFM?rlkey=83ia0h27le8qptftt5uqbmu5a&st=5cobv818&dl=0" class="btn">
+            存取檔案庫
+            <span>免登入下載</span>
+        </a>
 
+        <!-- 按鈕 B：Dropbox 要求檔案連結 (上傳) -->
+        <a href="https://www.dropbox.com/request/HrCK0EOCCJidkjCsy6pI" class="btn">
+            上傳新報告
+            <span>免登入直接傳檔案</span>
+        </a>
+    </div>
 </body>
 </html>
